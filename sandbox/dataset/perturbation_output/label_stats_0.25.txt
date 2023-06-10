@@ -1,14 +1,14 @@
-         O  I-location  B-location  B-virus  ...  I-animal  B-animal  I-time  B-time
-0     13.0         4.0         3.0      2.0  ...       NaN       NaN     NaN     NaN
-1     32.0         NaN         3.0      1.0  ...       NaN       NaN     NaN     NaN
-2     16.0         1.0         NaN      NaN  ...       NaN       NaN     NaN     NaN
-3     22.0         NaN         NaN      1.0  ...       NaN       NaN     NaN     NaN
-4      4.0         NaN         NaN      NaN  ...       NaN       NaN     NaN     NaN
-...    ...         ...         ...      ...  ...       ...       ...     ...     ...
-2095  21.0         1.0         NaN      NaN  ...       NaN       NaN     1.0     1.0
-2096  11.0         1.0         1.0      1.0  ...       NaN       NaN     1.0     NaN
-2097  21.0         1.0         NaN      2.0  ...       NaN       NaN     NaN     NaN
-2098  12.0         NaN         2.0      1.0  ...       2.0       1.0     NaN     NaN
-2099   7.0         1.0         2.0      NaN  ...       NaN       NaN     NaN     NaN
+         O  B-organization  I-location  ...  B-location  I-disease  I-bacterium
+0     14.0             3.0         3.0  ...         NaN        NaN          NaN
+1     26.0             4.0         1.0  ...         NaN        NaN          NaN
+2     13.0             1.0         NaN  ...         NaN        NaN          NaN
+3     18.0             1.0         2.0  ...         NaN        NaN          NaN
+4      3.0             2.0         NaN  ...         NaN        NaN          NaN
+...    ...             ...         ...  ...         ...        ...          ...
+2095  21.0             2.0         1.0  ...         NaN        NaN          NaN
+2096  13.0             NaN         1.0  ...         2.0        NaN          NaN
+2097  22.0             1.0         NaN  ...         NaN        1.0          NaN
+2098  11.0             2.0         2.0  ...         1.0        NaN          1.0
+2099   6.0             NaN         NaN  ...         1.0        NaN          1.0
 
 [2100 rows x 21 columns]

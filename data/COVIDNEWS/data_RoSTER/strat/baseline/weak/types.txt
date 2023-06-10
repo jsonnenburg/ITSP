@@ -1,0 +1,10 @@
+person
+location
+organization
+time
+disease
+virus
+product
+animal
+symptom
+bacterium

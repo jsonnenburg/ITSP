@@ -1,0 +1,130 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red34\green255\blue6;\red251\green2\blue7;\red0\green0\blue0;
+\red23\green186\blue251;\red33\green255\blue6;}
+{\*\expandedcolortbl;;\cssrgb\c0\c100000\c0;\cssrgb\c100000\c14913\c0;\cssrgb\c0\c1\c1;
+\cssrgb\c0\c77905\c98860;\cssrgb\c0\c97680\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww16640\viewh16060\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 1. \cf2 DONE\cf0  - Take raw UNLABELED data and bring it into unified format\
+	
+\f1\b0 - done for COVIDNEWS, required for other datasets
+\f0\b \
+
+\f1\b0 \'97> data frame with columns \'93sequences\'94, \'93labels\'94, \'93sequence_tok\'94, \'93ner_BIO_full\'94\
+	- sequences are the strings of the full sequences\
+	- labels are strings of the full BIO labels, joined together as string, separated by whitespace\
+	- sequence_tok is list of the tokenised sequences\
+	- ner_BIO_full is list of the tokenised BIO labels\
+\
+	- need only: sequence, sequence_tok \
+\
+	- 
+\f0\b OUTPUT
+\f1\b0 : data/$DATASET/__init/weak/data_train.csv AND data/$DATASET/__init/strong/data_train.csv + test set\
+
+\f0\b \
+\
+	NOTE: \cf3 THIS WILL BE DONE IN JUPYTER NOTEBOOKS SEPARATELY FOR EACH DATASET\cf2 \
+	\cf4 this was only done for data_train, format still not unified for valid/test sets\cf0 \
+
+\f1\b0 \
+
+\f0\b 2. \cf5 MAX\cf4  \cf0 Feed unified data into skweak, generate entity dictionary
+\f1\b0 \
+	- requires: data_train.csv \
+
+\f0\b \
+
+\f1\b0 	- 
+\f0\b OUTPUT: 
+\f1\b0 entity dictionary, saved in ITSP/data/$DATASET/dist_skweak/entity_dict as \'91skweak_dict.odt\'92
+\f0\b \
+	
+\f1\b0 \
+
+\f0\b 3. \cf6 DONE
+\f1\b0 \cf0  - 
+\f0\b Generate distant labels for training data using entity dictionary\
+	
+\f1\b0 - input: $DATASET/dist_skweak/entity_dict/skweak_dist.csv and $DATASET/__init/weak/data_train.csv
+\f0\b \
+
+\f1\b0 	- generate columns labels, labels_tok (NOT BIO FORMAT)
+\f0\b \cf4 \
+	- save datasets to data/$DATASET/dist_skweak
+\f1\b0 \cf0 /data_train.csv\
+\
+
+\f0\b 4. \cf6 DONE\cf0  Perturb labels\
+	
+\f1\b0 - use label_pertubation/run_label_perturb.sh\
+	- requires:\
+\
+	- 
+\f0\b OUTPUT
+\f1\b0 : data/$DATASET/data_train_perturbed_*.csv \'97> change to data/$DATASET/data_perturbed/raw/data_train_$METHOD.csv
+\f0\b \
+\
+5. \cf6 DONE
+\f1\b0 \cf0  - 
+\f0\b Transform perturbed labels into BIO format
+\f1\b0 \
+	\
+	- 
+\f0\b OUTPUT
+\f1\b0 :
+\f0\b  
+\f1\b0 dataframe of training set, saved in data/$DATASET/data_perturbed/BIO/data_train_$METHOD.csv\
+
+\f0\b \
+6. \cf6 DONE
+\f1\b0 \cf0  
+\f0\b Generate RoSTER-conform WEAK
+\f1\b0  
+\f0\b training, STRONG training + test data\
+	
+\f1\b0 - 
+\f0\b for training data: 
+\f1\b0 use utils/run_perturbed_to_RoSTER.sh \'97> adapt path according to previous step\
+\
+	- save 
+\f0\b WEAK data to 
+\f1\b0 data/$DATASET/data_RoSTER/weak\
+	- save STRONG data to data/$DATASET/data_RoSTER/strong\
+\
+\
+	- RoSTER needs, for each dataset (the strong set, all the weak (perturbed) sets):\
+		- train_text.txt\
+		- train_label_dist.txt\
+\
+		- 
+\f0\b strong only:
+\f1\b0 \
+		- test_text.txt\
+		- test_label_dist.txt\
+		- test_label_true.txt\
+\
+		- types.txt\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\f0\b\fs24 \
+}

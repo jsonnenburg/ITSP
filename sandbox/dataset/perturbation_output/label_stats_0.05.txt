@@ -1,14 +1,14 @@
-         O  B-location  I-location  ...  B-bacterium  I-virus  I-animal
-0     18.0         3.0         3.0  ...          NaN      NaN       NaN
-1     35.0         1.0         NaN  ...          NaN      NaN       NaN
-2     18.0         NaN         1.0  ...          NaN      NaN       NaN
-3     27.0         NaN         NaN  ...          NaN      NaN       NaN
-4      4.0         NaN         NaN  ...          NaN      NaN       NaN
-...    ...         ...         ...  ...          ...      ...       ...
-2095  26.0         NaN         NaN  ...          NaN      1.0       NaN
-2096  14.0         2.0         1.0  ...          1.0      NaN       NaN
-2097  24.0         NaN         NaN  ...          NaN      1.0       NaN
-2098  16.0         1.0         2.0  ...          NaN      NaN       NaN
-2099   8.0         1.0         NaN  ...          NaN      NaN       NaN
+         O  B-location  I-location  ...  I-symptom  B-bacterium  I-bacterium
+0     17.0         3.0         3.0  ...        NaN          NaN          NaN
+1     36.0         1.0         NaN  ...        NaN          NaN          NaN
+2     19.0         NaN         NaN  ...        NaN          NaN          NaN
+3     27.0         NaN         NaN  ...        NaN          NaN          NaN
+4      3.0         NaN         NaN  ...        NaN          NaN          NaN
+...    ...         ...         ...  ...        ...          ...          ...
+2095  24.0         NaN         NaN  ...        NaN          NaN          NaN
+2096  17.0         2.0         1.0  ...        NaN          NaN          NaN
+2097  26.0         NaN         NaN  ...        NaN          NaN          NaN
+2098  15.0         1.0         2.0  ...        NaN          NaN          NaN
+2099   8.0         2.0         NaN  ...        NaN          NaN          NaN
 
 [2100 rows x 21 columns]

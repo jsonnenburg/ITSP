@@ -1,9 +1,9 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2708
+{\rtf1\ansi\ansicpg1252\cocoartf2709
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;\red34\green255\blue6;\red251\green2\blue7;\red0\green0\blue0;
-\red23\green186\blue251;\red33\green255\blue6;}
+\red23\green186\blue251;\red33\green255\blue6;\red255\green255\blue255;\red0\green0\blue0;}
 {\*\expandedcolortbl;;\cssrgb\c0\c100000\c0;\cssrgb\c100000\c14913\c0;\cssrgb\c0\c1\c1;
-\cssrgb\c0\c77905\c98860;\cssrgb\c0\c97680\c0;}
+\cssrgb\c0\c77905\c98860;\cssrgb\c0\c97680\c0;\csgray\c100000;\cssrgb\c0\c0\c0;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww16640\viewh16060\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
@@ -48,6 +48,9 @@
 \f1\b0 \cf0  - 
 \f0\b Generate distant labels for training data using entity dictionary\
 	
+\f1\b0 \cb7 - \cf8 use bash run_skweak_to_training_data.sh
+\f0\b \cf0 \cb1 \
+	
 \f1\b0 - input: $DATASET/dist_skweak/entity_dict/skweak_dist.csv and $DATASET/__init/weak/data_train.csv
 \f0\b \
 
@@ -59,7 +62,7 @@
 
 \f0\b 4. \cf6 DONE\cf0  Perturb labels\
 	
-\f1\b0 - use label_pertubation/run_label_perturb.sh\
+\f1\b0 - use utils/run_label_perturb.sh\
 	- requires:\
 \
 	- 
@@ -69,8 +72,9 @@
 \
 5. \cf6 DONE
 \f1\b0 \cf0  - 
-\f0\b Transform perturbed labels into BIO format
-\f1\b0 \
+\f0\b Transform perturbed labels into BIO format\
+	
+\f1\b0 - use run_dist_labels_to_BIO.sh\
 	\
 	- 
 \f0\b OUTPUT
@@ -109,6 +113,24 @@
 		- types.txt\
 \
 \
+===== SUMMARY ====\
+Scripts starting from skweak output:\
+cd utils\
+\cf8 bash run_skweak_to_training_data.sh\
+\cf0 bash run_label_perturb.sh\
+bash run_dist_labels_to_BIO.sh\
+bash run_perturbed_to_RoSTER.sh\
+\
+
+\f0\b \ul For baseline model:
+\f1\b0 \ulnone \
+cd ../baseline_model\
+bash training_data_$DATASET.sh\
+\
+conda activate roster\
+bash run_$DATASET_$DATAVARIANT.sh\
+\
+===================\
 \
 \
 \

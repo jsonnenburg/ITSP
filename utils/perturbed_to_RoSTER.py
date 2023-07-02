@@ -3,6 +3,9 @@ import argparse
 import os
 import ast
 
+"""
+Takes the strong and the weak perturbed data, converts it to RoSTER-conform format, and saves it to appropriate folder.
+"""
 
 def join_strings(row):
     return ' '.join(row)

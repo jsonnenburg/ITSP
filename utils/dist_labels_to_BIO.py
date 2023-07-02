@@ -3,6 +3,9 @@ import os
 import ast
 import argparse
 
+"""
+Takes labeled data in skweak output format (O, ORG, PERSON, etc.) and turns it into BIO-format (O, B-org, I-person, etc.)
+"""
 
 def generate_bio_labels(entity_labels):
     bio_labels = []

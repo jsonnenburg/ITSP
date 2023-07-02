@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RoSTER" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baseline_model" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/data/raw/covidnews-ner" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sandbox/covidnews-ner" vcs="Git" />
   </component>

@@ -2,6 +2,11 @@ import pandas as pd
 import argparse
 import os
 
+"""
+(Archived / superseded by generation of labels from conllu output file)
+Generates entity labels for sequences from skweak entity dictionary.
+"""
+
 
 def join_strings(row):
     return ' '.join(row)
